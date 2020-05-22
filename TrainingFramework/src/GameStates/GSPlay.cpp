@@ -20,9 +20,9 @@ int landed[H][W];
 int block[4][4];
 int x, y, lastRow, score;
 bool success, isGameOver;
-int nextBlockType; 
+int nextBlockType;
 float deltaFallTime = 0.0;
-int deltaScore = 1;
+int deltaScore = 20;
 int block_list[7][4][4] =
 {
 	{
@@ -106,8 +106,8 @@ void GSPlay::Init()
 	for (int row = 0; row < H; row++) {
 		for (int col = 0; col < W; col++) {
 			m_board[row][col] = std::make_shared<Sprite2D>(model, shader, texture);
-			m_board[row][col]->Set2DPosition(30.4 + col*32.8, 28.4 + row*32.8);
-			if (board[row][col] == 1 && row > 1) {				
+			m_board[row][col]->Set2DPosition(30.4 + col * 32.8, 28.4 + row * 32.8);
+			if (board[row][col] == 1 && row > 1) {
 				m_board[row][col]->SetSize(32.8, 32.8);
 			}
 			else m_board[row][col]->SetSize(0, 0);
@@ -127,7 +127,7 @@ void GSPlay::Init()
 	button->SetSize(50, 50);
 	button->SetOnClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_PauseMenu);
-	});
+		});
 	m_listButton.push_back(button);
 
 	//setting button
@@ -137,7 +137,7 @@ void GSPlay::Init()
 	button->SetSize(50, 50);
 	button->SetOnClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Setting);
-	});
+		});
 	m_listButton.push_back(button);
 
 	//main menu button
@@ -147,7 +147,7 @@ void GSPlay::Init()
 	button->SetSize(120, 30);
 	button->SetOnClick([]() {
 		GameStateMachine::GetInstance()->PopState();
-	});
+		});
 	m_listButton.push_back(button);
 
 	//Next block
@@ -174,7 +174,7 @@ void GSPlay::Init()
 		texture = ResourceManagers::GetInstance()->GetTexture("l");
 		break;
 	}
-	
+
 	m_nextBlock = std::make_shared<Sprite2D>(model, shader, texture);
 	m_nextBlock->Set2DPosition(415, 200);
 	m_nextBlock->SetSize(60, 60);
@@ -207,7 +207,7 @@ void GSPlay::Resume()
 
 void GSPlay::HandleEvents()
 {
-	
+
 }
 
 void GSPlay::HandleKeyEvents(int key, bool bIsPressed)
@@ -223,10 +223,26 @@ void GSPlay::HandleKeyEvents(int key, bool bIsPressed)
 						landed[i][j] = board[i][j];
 					}
 				}
+				int rows = 0;
 				for (int row = lastRow - 3; row <= lastRow; row++) {
 					if (isFilled(row)) {
 						clearLine(row);
+						rows++;
 					}
+				}
+				switch (rows) {
+					case 1:
+						score++;
+						break;
+					case 2:
+						score += 4;
+						break;
+					case 3:
+						score += 7;
+						break;
+					case 4:
+						score += 10;
+						break;
 				}
 				success = spawnBlock();
 			}
@@ -238,10 +254,26 @@ void GSPlay::HandleKeyEvents(int key, bool bIsPressed)
 						landed[i][j] = board[i][j];
 					}
 				}
+				int rows = 0;
 				for (int row = lastRow - 3; row <= lastRow; row++) {
 					if (isFilled(row)) {
 						clearLine(row);
+						rows++;
 					}
+				}
+				switch (rows) {
+					case 1:
+						score++;
+						break;
+					case 2:
+						score += 4;
+						break;
+					case 3:
+						score += 7;
+						break;
+					case 4:
+						score += 10;
+						break;
 				}
 				success = spawnBlock();
 			}
@@ -291,31 +323,31 @@ void GSPlay::Update(float deltaTime)
 			deltaFallTime = 0.0;
 		}
 	}
-	else if (score >= deltaScore && score < deltaScore*2) {
+	else if (score >= deltaScore && score < deltaScore * 2) {
 		if (deltaFallTime > 1.0) {
 			dropBlock();
 			deltaFallTime = 0.0;
 		}
 	}
-	else if (score >= deltaScore*2 && score < deltaScore*3) {
-		if (deltaFallTime > 0.7) {
+	else if (score >= deltaScore * 2 && score < deltaScore * 3) {
+		if (deltaFallTime > 0.75) {
 			dropBlock();
 			deltaFallTime = 0.0;
 		}
 	}
-	else if (score >= deltaScore*3 && score < deltaScore*4) {
+	else if (score >= deltaScore * 3 && score < deltaScore * 4) {
 		if (deltaFallTime > 0.5) {
 			dropBlock();
 			deltaFallTime = 0.0;
 		}
 	}
-	else if (score >= deltaScore*4 && score < deltaScore*5) {
+	else if (score >= deltaScore * 4 && score < deltaScore * 5) {
 		if (deltaFallTime > 0.3) {
 			dropBlock();
 			deltaFallTime = 0.0;
 		}
 	}
-	else if (score >= deltaScore*5) {
+	else if (score >= deltaScore * 5) {
 		if (deltaFallTime > 0.15) {
 			dropBlock();
 			deltaFallTime = 0.0;
@@ -374,7 +406,7 @@ void GSPlay::Update(float deltaTime)
 		for (int row = 0; row < H; row++) {
 			for (int col = 0; col < W; col++) {
 				m_board[row][col] = std::make_shared<Sprite2D>(model, shader, texture);
-				m_board[row][col]->Set2DPosition(30.4 + col*32.8, 28.4 + row*32.8);
+				m_board[row][col]->Set2DPosition(30.4 + col * 32.8, 28.4 + row * 32.8);
 				if (board[row][col] == 1 && row > 1) {
 					m_board[row][col]->SetSize(32.8, 32.8);
 				}
@@ -410,7 +442,7 @@ void GSPlay::Draw()
 		it->Draw();
 	}
 	m_score->Draw();
-	
+
 }
 
 void GSPlay::SetNewPostionForBullet()
@@ -441,7 +473,7 @@ bool spawnBlock() {
 				board[i][j + 4] = tmp[i][j];
 			}
 		}
-		success =  false;
+		success = false;
 	}
 	success = true;
 
@@ -474,7 +506,7 @@ bool moveBlock(int x2, int y2) {
 bool moveToBottom() {
 	int y2 = y;
 	while (!isCollide(x, y2)) y2++;
-	return moveBlock(x, y2-1);
+	return moveBlock(x, y2 - 1);
 }
 
 bool rotateBlock() {
@@ -534,7 +566,6 @@ void clearLine(int x) {
 			board[i][j] = board[i - 1][j];
 		}
 	}
-	score++;
 }
 
 void dropBlock() {
@@ -544,10 +575,26 @@ void dropBlock() {
 				landed[i][j] = board[i][j];
 			}
 		}
+		int rows = 0;
 		for (int row = lastRow - 3; row <= lastRow; row++) {
 			if (isFilled(row)) {
 				clearLine(row);
+				rows++;
 			}
+		}
+		switch (rows) {
+			case 1:
+				score++;
+				break;
+			case 2:
+				score += 4;
+				break;
+			case 3:
+				score += 7;
+				break;
+			case 4:
+				score += 10;
+				break;
 		}
 		spawnBlock();
 	}

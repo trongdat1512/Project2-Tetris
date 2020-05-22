@@ -1,43 +1,40 @@
-﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Release-Nvidia\) contains files shared from another project (TrainingFramework.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  GSPauseMenu.cpp
-src\GameStates\GSPauseMenu.cpp(27): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-src\GameStates\GSPauseMenu.cpp(33): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-src\GameStates\GSPauseMenu.cpp(44): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-D:\Microsoft Visual Studio 14.0\VC\include\memory(901): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  D:\Microsoft Visual Studio 14.0\VC\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[6],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[6],TEXT_COLOR &&,double &&)' being compiled
-          with
-          [
-              _Ty=Text
-          ]
-  D:\Microsoft Visual Studio 14.0\VC\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[6],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[6],TEXT_COLOR &&,double &&)' being compiled
-          with
-          [
-              _Ty=Text
-          ]
-  src\GameStates\GSPauseMenu.cpp(43): note: see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[6],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[6],TEXT_COLOR &&,double &&)' being compiled
+﻿C:\Program Files\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(467,5): warning MSB8028: The intermediate directory (Release-Nvidia\) contains files shared from another project (TrainingFramework.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   GSPlay.cpp
-src\GameStates\GSPlay.cpp(109): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(111): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-src\GameStates\GSPlay.cpp(120): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(377): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(379): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-D:\Microsoft Visual Studio 14.0\VC\include\memory(901): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  D:\Microsoft Visual Studio 14.0\VC\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,TEXT_COLOR &&,double &&)' being compiled
+E:\Project2-Tetris\TrainingFramework\src\GameStates\GSPlay.cpp(109,61): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+E:\Project2-Tetris\TrainingFramework\src\GameStates\GSPlay.cpp(109,42): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+E:\Project2-Tetris\TrainingFramework\src\GameStates\GSPlay.cpp(111,38): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+E:\Project2-Tetris\TrainingFramework\src\GameStates\GSPlay.cpp(111,32): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+E:\Project2-Tetris\TrainingFramework\src\GameStates\GSPlay.cpp(120,60): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\Project2-Tetris\TrainingFramework\src\GameStates\GSPlay.cpp(120,42): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\Project2-Tetris\TrainingFramework\src\GameStates\GSPlay.cpp(409,62): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+E:\Project2-Tetris\TrainingFramework\src\GameStates\GSPlay.cpp(409,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+E:\Project2-Tetris\TrainingFramework\src\GameStates\GSPlay.cpp(411,39): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+E:\Project2-Tetris\TrainingFramework\src\GameStates\GSPlay.cpp(411,33): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(204,33): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\memory(1490): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,TEXT_COLOR,double>(_Ty &,std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,TEXT_COLOR &&,double &&) noexcept(false)' being compiled
           with
           [
               _Ty=Text
           ]
-  D:\Microsoft Visual Studio 14.0\VC\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,TEXT_COLOR &&,double &&)' being compiled
+C:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\memory(1588): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,TEXT_COLOR &&,double &&)' being compiled
           with
           [
               _Ty=Text
           ]
-  src\GameStates\GSPlay.cpp(186): note: see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,std::string,TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,std::string &&,TEXT_COLOR &&,double &&)' being compiled
+C:\Program Files\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\memory(1588): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+E:\Project2-Tetris\TrainingFramework\src\GameStates\GSPlay.cpp(186): message : see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,std::string,TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,std::string &&,TEXT_COLOR &&,double &&)' being compiled
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  4 of 1940 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    17 functions had inline decision re-evaluated but remain unchanged
+  1 of 1600 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    6 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  TrainingFramework.vcxproj -> C:\Users\fappe\Documents\Visual Studio 2015\Projects\Tetris\\BIN-Nvidia\Tetris.exe
-  TrainingFramework.vcxproj -> C:\Users\fappe\Documents\Visual Studio 2015\Projects\Tetris\\BIN-Nvidia\Tetris.pdb (Full PDB)
+  TrainingFramework.vcxproj -> E:\Project2-Tetris\\BIN-Nvidia\Tetris.exe
