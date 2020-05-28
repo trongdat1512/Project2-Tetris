@@ -15,6 +15,7 @@
 extern int screenWidth; //need get on Graphic engine
 extern int screenHeight; //need get on Graphic engine
 extern int clickstat;
+extern bool isMuted;
 int board[H][W];
 int landed[H][W];
 int block[4][4];
@@ -32,39 +33,39 @@ int block_list[7][4][4] =
 		{ 0, 1, 0, 0 }
 	},
 	{
-		{ 0, 0, 1, 0 },
-		{ 0, 0, 1, 0 },
-		{ 0, 1, 1, 0 },
+		{ 0, 0, 2, 0 },
+		{ 0, 0, 2, 0 },
+		{ 0, 2, 2, 0 },
 		{ 0, 0, 0, 0 }
 	},
 	{
-		{ 0, 0, 1, 0 },
-		{ 0, 1, 1, 0 },
-		{ 0, 1, 0, 0 },
+		{ 0, 0, 3, 0 },
+		{ 0, 3, 3, 0 },
+		{ 0, 3, 0, 0 },
 		{ 0, 0, 0, 0 }
 	},
 	{
-		{ 0, 1, 0, 0 },
-		{ 0, 1, 1, 0 },
-		{ 0, 0, 1, 0 },
+		{ 0, 4, 0, 0 },
+		{ 0, 4, 4, 0 },
+		{ 0, 0, 4, 0 },
 		{ 0, 0, 0, 0 }
 	},
 	{
-		{ 0, 1, 0, 0 },
-		{ 0, 1, 1, 0 },
-		{ 0, 1, 0, 0 },
+		{ 0, 5, 0, 0 },
+		{ 0, 5, 5, 0 },
+		{ 0, 5, 0, 0 },
 		{ 0, 0, 0, 0 }
 	},
 	{
 		{ 0, 0, 0, 0 },
-		{ 0, 1, 1, 0 },
-		{ 0, 1, 1, 0 },
+		{ 0, 6, 6, 0 },
+		{ 0, 6, 6, 0 },
 		{ 0, 0, 0, 0 }
 	},
 	{
-		{ 0, 1, 0, 0 },
-		{ 0, 1, 0, 0 },
-		{ 0, 1, 1, 0 },
+		{ 0, 7, 0, 0 },
+		{ 0, 7, 0, 0 },
+		{ 0, 7, 7, 0 },
 		{ 0, 0, 0, 0 }
 	}
 };
@@ -101,7 +102,7 @@ GSPlay::~GSPlay()
 void GSPlay::Init()
 {
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
-	auto texture = ResourceManagers::GetInstance()->GetTexture("dot");
+	auto texture = ResourceManagers::GetInstance()->GetTexture("dot_o");
 	auto shader = ResourceManagers::GetInstance()->GetShader("TextureShader");
 	for (int row = 0; row < H; row++) {
 		for (int col = 0; col < W; col++) {
@@ -231,18 +232,25 @@ void GSPlay::HandleKeyEvents(int key, bool bIsPressed)
 					}
 				}
 				switch (rows) {
-					case 1:
-						score++;
-						break;
-					case 2:
-						score += 4;
-						break;
-					case 3:
-						score += 7;
-						break;
-					case 4:
-						score += 10;
-						break;
+				case 1:
+					score++;
+					if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_1");
+					break;
+				case 2:
+					score += 4;
+					if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_1");
+					break;
+				case 3:
+					score += 7;
+					if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_2");
+					break;
+				case 4:
+					score += 10;
+					if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_2");
+					break;
+				default:
+					if (!isMuted) ResourceManagers::GetInstance()->PlaySound("sound_eff_1");
+					break;
 				}
 				success = spawnBlock();
 			}
@@ -262,18 +270,25 @@ void GSPlay::HandleKeyEvents(int key, bool bIsPressed)
 					}
 				}
 				switch (rows) {
-					case 1:
-						score++;
-						break;
-					case 2:
-						score += 4;
-						break;
-					case 3:
-						score += 7;
-						break;
-					case 4:
-						score += 10;
-						break;
+				case 1:
+					score++;
+					if(!isMuted) ResourceManagers::GetInstance()->PlaySound("point_1");
+					break;
+				case 2:
+					score += 4;
+					if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_1");
+					break;
+				case 3:
+					score += 7;
+					if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_2");
+					break;
+				case 4:
+					score += 10;
+					if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_2");
+					break;
+				default:
+					if (!isMuted) ResourceManagers::GetInstance()->PlaySound("sound_eff_1");
+					break;
 				}
 				success = spawnBlock();
 			}
@@ -356,6 +371,7 @@ void GSPlay::Update(float deltaTime)
 
 	//Game over
 	if (isGameOver) {
+		if (!isMuted) ResourceManagers::GetInstance()->PlaySound("game_over");
 		GameStateMachine::GetInstance()->PopState();
 		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_GameOver);
 	}
@@ -402,12 +418,43 @@ void GSPlay::Update(float deltaTime)
 
 	//Update board
 	if (success) {
-		texture = ResourceManagers::GetInstance()->GetTexture("dot");
+		texture = ResourceManagers::GetInstance()->GetTexture("dot_o");
 		for (int row = 0; row < H; row++) {
 			for (int col = 0; col < W; col++) {
+				switch (board[row][col]) {
+				case 0:
+				case 1: {
+					texture = ResourceManagers::GetInstance()->GetTexture("dot_i");
+					break;
+				}
+				case 2: {
+					texture = ResourceManagers::GetInstance()->GetTexture("dot_j");
+					break;
+				}
+				case 3: {
+					texture = ResourceManagers::GetInstance()->GetTexture("dot_z");
+					break;
+				}
+				case 4: {
+					texture = ResourceManagers::GetInstance()->GetTexture("dot_s");
+					break;
+				}
+				case 5: {
+					texture = ResourceManagers::GetInstance()->GetTexture("dot_t");
+					break;
+				}
+				case 6: {
+					texture = ResourceManagers::GetInstance()->GetTexture("dot_o");
+					break;
+				}
+				case 7:{
+					texture = ResourceManagers::GetInstance()->GetTexture("dot_l");
+					break;
+				}
+				}
 				m_board[row][col] = std::make_shared<Sprite2D>(model, shader, texture);
 				m_board[row][col]->Set2DPosition(30.4 + col * 32.8, 28.4 + row * 32.8);
-				if (board[row][col] == 1 && row > 1) {
+				if (board[row][col] > 0 && row > 1) {
 					m_board[row][col]->SetSize(32.8, 32.8);
 				}
 				else m_board[row][col]->SetSize(0, 0);
@@ -543,8 +590,8 @@ bool rotateBlock() {
 bool isCollide(int x2, int y2) {
 	for (int i = 3; i >= 0; i--) {
 		for (int j = 0; j < 4; j++) {
-			if (block[i][j] == 1 && (y2 + i >= H || x2 + j < 0 || x2 + j >= W)) return true;
-			if (block[i][j] == 1 && landed[y2 + i][x2 + j] == 1) return true;
+			if (block[i][j] >= 1 && block[i][j] <= 7 && (y2 + i >= H || x2 + j < 0 || x2 + j >= W)) return true;
+			if (block[i][j] >= 1 && block[i][j] <= 7 && landed[y2 + i][x2 + j] >= 1 && landed[y2 + i][x2 + j] <= 7) return true;
 		}
 	}
 	return false;
@@ -583,18 +630,25 @@ void dropBlock() {
 			}
 		}
 		switch (rows) {
-			case 1:
-				score++;
-				break;
-			case 2:
-				score += 4;
-				break;
-			case 3:
-				score += 7;
-				break;
-			case 4:
-				score += 10;
-				break;
+		case 1:
+			score++;
+			if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_1");
+			break;
+		case 2:
+			score += 4;
+			if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_1");
+			break;
+		case 3:
+			score += 7;
+			if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_2");
+			break;
+		case 4:
+			score += 10;
+			if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_2");
+			break;
+		default:
+			if (!isMuted) ResourceManagers::GetInstance()->PlaySound("sound_eff_1");
+			break;
 		}
 		spawnBlock();
 	}

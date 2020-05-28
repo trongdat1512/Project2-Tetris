@@ -4,6 +4,7 @@
 extern int screenWidth; //need get on Graphic engine
 extern int screenHeight; //need get on Graphic engine
 int clickstat = 0;
+bool isMuted = false;
 
 GSIntro::GSIntro()
 {
