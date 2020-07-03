@@ -61,15 +61,15 @@ void GSSetting::Init()
 	//text setting title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("telelower");
-	std::shared_ptr<Text> text = std::make_shared< Text>(shader, font, "SETTING", TEXT_COLOR::GREEN, 1.7);
+	std::shared_ptr<Text> text = std::make_shared< Text>(shader, font, "SETTING", TEXT_COLOR::BLUE, 1.7);
 	text->Set2DPosition(Vector2(screenWidth / 2 - 80, 120));
 	m_listText.push_back(text);
 
-	text = std::make_shared< Text>(shader, font, "Background Music", TEXT_COLOR::GREEN, 1.2);
+	text = std::make_shared< Text>(shader, font, "Background Music", TEXT_COLOR::BLUE, 1.2);
 	text->Set2DPosition(Vector2(screenWidth / 2 - 120, 200));
 	m_listText.push_back(text);
 
-	text = std::make_shared< Text>(shader, font, "Sound Effects", TEXT_COLOR::GREEN, 1.2);
+	text = std::make_shared< Text>(shader, font, "Sound Effects", TEXT_COLOR::BLUE, 1.2);
 	text->Set2DPosition(Vector2(screenWidth / 2 - 100, 350));
 	m_listText.push_back(text);
 }

@@ -61,7 +61,7 @@ void GSMenu::Init()
 	//text game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("telelower");
-	m_Text_gameName = std::make_shared< Text>(shader, font, "TETRIS", TEXT_COLOR::GREEN, 2.0);
+	m_Text_gameName = std::make_shared< Text>(shader, font, "TETRIS", TEXT_COLOR::BLUE, 2.0);
 	m_Text_gameName->Set2DPosition(Vector2(screenWidth / 2 - 82, 90));
 
 	ResourceManagers::GetInstance()->PlaySound("Twister-Tetris", true);

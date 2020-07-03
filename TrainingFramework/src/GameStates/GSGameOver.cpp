@@ -54,7 +54,7 @@ void GSGameOver::Init()
 	//text game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("telelower");
-	m_Text_gameName = std::make_shared< Text>(shader, font, "Final Score: " + std::to_string(score), TEXT_COLOR::GREEN, 1.7);
+	m_Text_gameName = std::make_shared< Text>(shader, font, "Final Score: " + std::to_string(score), TEXT_COLOR::BLUE, 1.7);
 	m_Text_gameName->Set2DPosition(Vector2(screenWidth / 2 - 140, 120));
 }
 

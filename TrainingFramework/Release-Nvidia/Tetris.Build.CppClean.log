@@ -1,39 +1,39 @@
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\vc140.pdb
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\texture.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\text.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\spriteanimation.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\shaders.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\models.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\sprite3d.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\camera.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\sprite2d.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\gamebutton.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\font.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\trainingframework.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\gsmenu.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\resourcemanagers.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\gamestatebase.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\gamestatemachine.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\gssetting.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\gsplay.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\gspausemenu.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\gsintro.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\gsgameover.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\application.obj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\bin-nvidia\tetris.exe
-c:\users\fappe\documents\visual studio 2015\projects\tetris\bin-nvidia\tetris.ipdb
-c:\users\fappe\documents\visual studio 2015\projects\tetris\bin-nvidia\tetris.iobj
-c:\users\fappe\documents\visual studio 2015\projects\tetris\bin-nvidia\tetris.pdb
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\trainingframework.res
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\trainingframework.vcxprojresolveassemblyreference.cache
-c:\users\fappe\documents\visual studio 2015\projects\tetris\\bin-nvidia\tetris.pdb
-c:\users\fappe\documents\visual studio 2015\projects\tetris\\bin-nvidia\tetris.exe
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\tetris.tlog\cl.command.1.tlog
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\tetris.tlog\cl.read.1.tlog
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\tetris.tlog\cl.write.1.tlog
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\tetris.tlog\link.command.1.tlog
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\tetris.tlog\link.read.1.tlog
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\tetris.tlog\link.write.1.tlog
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\tetris.tlog\rc.command.1.tlog
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\tetris.tlog\rc.read.1.tlog
-c:\users\fappe\documents\visual studio 2015\projects\tetris\trainingframework\release-nvidia\tetris.tlog\rc.write.1.tlog
+e:\project2-tetris\trainingframework\release-nvidia\vc142.pdb
+e:\project2-tetris\trainingframework\release-nvidia\gssetting.obj
+e:\project2-tetris\trainingframework\release-nvidia\gsplay.obj
+e:\project2-tetris\trainingframework\release-nvidia\gspausemenu.obj
+e:\project2-tetris\trainingframework\release-nvidia\gsmenu.obj
+e:\project2-tetris\trainingframework\release-nvidia\gsintro.obj
+e:\project2-tetris\trainingframework\release-nvidia\gsgameover.obj
+e:\project2-tetris\trainingframework\release-nvidia\gamestatemachine.obj
+e:\project2-tetris\trainingframework\release-nvidia\gamestatebase.obj
+e:\project2-tetris\trainingframework\release-nvidia\texture.obj
+e:\project2-tetris\trainingframework\release-nvidia\text.obj
+e:\project2-tetris\trainingframework\release-nvidia\spriteanimation.obj
+e:\project2-tetris\trainingframework\release-nvidia\shaders.obj
+e:\project2-tetris\trainingframework\release-nvidia\models.obj
+e:\project2-tetris\trainingframework\release-nvidia\sprite3d.obj
+e:\project2-tetris\trainingframework\release-nvidia\camera.obj
+e:\project2-tetris\trainingframework\release-nvidia\sprite2d.obj
+e:\project2-tetris\trainingframework\release-nvidia\gamebutton.obj
+e:\project2-tetris\trainingframework\release-nvidia\font.obj
+e:\project2-tetris\trainingframework\release-nvidia\resourcemanagers.obj
+e:\project2-tetris\trainingframework\release-nvidia\application.obj
+e:\project2-tetris\trainingframework\release-nvidia\trainingframework.obj
+e:\project2-tetris\bin-nvidia\tetris.exe
+e:\project2-tetris\bin-nvidia\tetris.pdb
+e:\project2-tetris\trainingframework\release-nvidia\trainingframework.res
+e:\project2-tetris\bin-nvidia\tetris.ipdb
+e:\project2-tetris\bin-nvidia\tetris.iobj
+e:\project2-tetris\\bin-nvidia\tetris.pdb
+e:\project2-tetris\\bin-nvidia\tetris.exe
+e:\project2-tetris\trainingframework\release-nvidia\tetris.tlog\cl.command.1.tlog
+e:\project2-tetris\trainingframework\release-nvidia\tetris.tlog\cl.read.1.tlog
+e:\project2-tetris\trainingframework\release-nvidia\tetris.tlog\cl.write.1.tlog
+e:\project2-tetris\trainingframework\release-nvidia\tetris.tlog\link.command.1.tlog
+e:\project2-tetris\trainingframework\release-nvidia\tetris.tlog\link.read.1.tlog
+e:\project2-tetris\trainingframework\release-nvidia\tetris.tlog\link.write.1.tlog
+e:\project2-tetris\trainingframework\release-nvidia\tetris.tlog\rc.command.1.tlog
+e:\project2-tetris\trainingframework\release-nvidia\tetris.tlog\rc.read.1.tlog
+e:\project2-tetris\trainingframework\release-nvidia\tetris.tlog\rc.write.1.tlog
+e:\project2-tetris\trainingframework\release-nvidia\tetris.tlog\tetris.write.1u.tlog

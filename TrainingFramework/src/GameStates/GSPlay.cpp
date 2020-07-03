@@ -8,8 +8,6 @@
 #include "Sprite3D.h"
 #include "Text.h"
 #include "SpriteAnimation.h"
-#include <thread>
-#include <windows.h>
 #include <string>
 
 extern int screenWidth; //need get on Graphic engine
@@ -237,11 +235,11 @@ void GSPlay::HandleKeyEvents(int key, bool bIsPressed)
 					if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_1");
 					break;
 				case 2:
-					score += 4;
+					score += 3;
 					if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_1");
 					break;
 				case 3:
-					score += 7;
+					score += 6;
 					if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_2");
 					break;
 				case 4:
@@ -275,11 +273,11 @@ void GSPlay::HandleKeyEvents(int key, bool bIsPressed)
 					if(!isMuted) ResourceManagers::GetInstance()->PlaySound("point_1");
 					break;
 				case 2:
-					score += 4;
+					score += 3;
 					if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_1");
 					break;
 				case 3:
-					score += 7;
+					score += 6;
 					if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_2");
 					break;
 				case 4:
@@ -635,11 +633,11 @@ void dropBlock() {
 			if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_1");
 			break;
 		case 2:
-			score += 4;
+			score += 3;
 			if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_1");
 			break;
 		case 3:
-			score += 7;
+			score += 6;
 			if (!isMuted) ResourceManagers::GetInstance()->PlaySound("point_2");
 			break;
 		case 4:
