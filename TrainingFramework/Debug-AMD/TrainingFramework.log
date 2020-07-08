@@ -1,2 +1,0 @@
-﻿Application.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-LINK : fatal error LNK1158: cannot run 'rc.exe'
